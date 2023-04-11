@@ -1,21 +1,20 @@
+SpriteManager _SM;
 
-
-
-
-void setup(){
-
-    size(800,600);
-    
-    
-    Sprite a = new Sprite(100,2000,400,400);
-
-    a.display();
-
-
-
+void setup() {
+    size(1024, 768);
+    _SM = new SpriteManager();
+    _SM.spawn(new Invader(250, 50));
 }
 
-void draw(){
-    //a circle that follows the mouse 50X50
-    ellipse(mouseX, mouseY, 50,50);
-}iug
+void draw() {
+    background(0);
+    _SM.manage();
+}
+
+void keyPressed() {
+    _SM.player.keyDown();
+}
+
+void keyReleased() {
+    _SM.player.keyUp();
+}
