@@ -23,14 +23,16 @@ class SpriteManager {
         bringOutTheDead();
         drawEverything();
     }
-    
+
+
     void moveEverything() {
-        for (Sprite s : active) 
-            s.update();
+        for(int i = active.size()-1; i> -1; i--){
+            active.get(i).update();
+        }
     }
     
     void drawEverything() {
-        for (Sprite s : active)
+        for (Sprite s: active)
             s.display();
     }
     

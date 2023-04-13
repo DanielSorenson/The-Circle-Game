@@ -3,7 +3,21 @@ SpriteManager _SM;
 void setup() {
     size(1024, 768);
     _SM = new SpriteManager();
-    _SM.spawn(new Invader(250, 50));
+
+   
+    
+   int count = 0;
+    for(int i=0;i<6;i++){
+        _SM.spawn(new Shooter(count, 50));
+
+        count += 100;
+    }
+
+
+
+
+    
+    
 }
 
 void draw() {
